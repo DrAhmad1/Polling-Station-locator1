@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Untitled</title>
+<title>Polling Station Locator</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 <meta name="generator" content="Web Page Maker (unregistered version)">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,24 +32,30 @@ DIV,UL,OL /* Left */
  margin-top: 0px;
  margin-bottom: 0px;
 }
-@media (max-width: 768px) { 
-    #image2, #image3, #image4, #image5 {
-        width: 100%; 
-        height: auto;  
-    }
- #html1 {
-        left: 0; 
-        top: auto;
-        width: 100%;
-    }
- #text1 {
-        text-align: center;
-    }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
- button {
-   background-color: #4CAF50; 
+body, html { 
+    height: 100%;
+    margin: 0;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column; 
+}
+
+button {
+   background-color: rgb(219, 219, 26); 
     border: none;
-    color: white;
+    color: rgb(34, 32, 32);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -57,101 +63,281 @@ DIV,UL,OL /* Left */
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 5px; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
 }
+button:hover {
+    background-color: #ebe978;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+.find-station-button {
+    position: absolute;
+    top: 70px;
+    left: 40%;
+    transform: translateX(-50%);
+    padding: 20px 41px;
+    /* background-color: #df1818; */
+    background-color: rgb(219, 219, 26);
+    color: rgb(34, 32, 32);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 24px;
+    font-weight: bold;
+}
+#image2 {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+#image3 {
+    position: relative; 
+    /* width: 100vw; 
+    height: 100vh;  */
+    height: auto;
+    display: block;
+    /* margin: 0;  */
+    margin: -2px 0 0 0;
+}
+
+ #image2 img, #image3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+} 
+#html1 {
+    position: relative; 
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 908px){
+    .find-station-button {
+        top: 52px;
+        padding: 20px 26px;
+        left: 39%;
+    }
+}
+@media (max-width: 876px){
+    .find-station-button {
+        padding: 22px 22px;
+        font-size: 20px;
+        top: 34px;
+    }
+}
+
+@media (max-width: 828px){
+    .find-station-button {
+        top: 34px;
+    }
+}
+
+@media (max-width: 788px){
+    .find-station-button {
+        top: 41px;
+    }
+}
+
+
+@media (max-width: 750px) { 
+    #image2, #image3{
+        width: 100%; 
+        height: auto;  
+    }
+    #html1 {
+      position: static;
+      left: 0;
+      width: 100%;
+  }
+    #text1 {
+        text-align: center;
+    }
+    .find-station-button {
+        top: 13px;
+        position: absolute;
+        left: 41%;
+        transform: translateX(-50%);
+        padding: 23px 10px;
+        cursor: pointer;
+        z-index: 5;
+        width: 37%;
+        font-size: 15px;
+    }
+  }
+
+  @media (max-width: 548px) {
+    .find-station-button{
+        top: 13px;
+        padding: 13px 4px;
+        width: 34%;
+        font-size: 15px;
+    }
+}
+@media (max-width: 430px) {
+    body {
+        margin: 0;
+    }
+
+    #image2, #image3{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+        /* display: block;
+        margin-bottom: 10px; */
+    }
+    #image3 {
+        position: relative; 
+        /* width: 233px;  Remove this to allow full-width expansion */
+        height: 100vh; 
+        margin: 0;
+    }
+    #image3 img { 
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+    }
+
+    #html1 {
+      position: relative;
+      width: 100%;
+      margin-top: 20px;
+    }
+    #text1 {
+      text-align: center;
+    }
+    .find-station-button {
+        top: 4px;
+        position: absolute;
+        left: 41%;
+        transform: translateX(-50%);
+        padding: 7px 0px;
+        cursor: pointer;
+        z-index: 5;
+        width: 34%;
+        font-size: 14px;
+    }
+  }
+
+  @media (max-width: 375px){
+        .find-station-button{
+        top: 2px;
+        font-size: 11px;
+    }
+  }
+  @media (max-width: 360px){
+    .find-station-button {
+        top: 2px;
+        font-size: 11px;
+    }
+}
+
+
+
+    #image2 img, #image3 img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;  /* or object-fit: contain, depending on your preference */
+    }
+
+    #image3 {
+        margin: -11px 0 0 0; 
+    }
+
+    #image3 img { 
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+    }
+
+    #html1 {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+    }  
 
 </style>
 
 </head>
 <body>
-<div id="image2" style="position:absolute; overflow:hidden; left:2px; top:8px; width:399px; height:285px; z-index:0"><img src="images/WhatsApp Image 2024-08-02 at 16.21.05.jpeg" alt="" title="" border=0 width=399 height=285></div>
+    <div class="container">
+        
+    <div id="image2"><img src="images/WhatsApp Image 2024-08-02 at 16.21.05.jpeg" alt="" title="" border=0 width=399 height=285></div>
 
-<div id="image3" style="position:absolute; overflow:hidden; left:0px; top:292px; width:402px; height:802px; z-index:1"><img src="images/WhatsApp Image 2024-08-09 at 15.27.30_615d87d4.jpg" alt="" title="" border=0 width=402 height=802></div>
-
-<div id="html1" style="position:absolute; overflow:hidden; left:828px; top:473px; width:596px; height:393px; z-index:2">
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Nearest Polling Station Locator</title>
-</head>
-<body>
-    <h1>Find Your Nearest Polling Station for PEC Election 2024</h1>
-    <button onclick="findNearestStation()">Find Nearest Station</button>
-
-    <script>
-        const stations = [
-            { name: "Mega DHA Karachi", lat: 24.8362, lng: 67.07028 },
-            { name: "Mega North Nazimabad", lat: 24.94628, lng: 67.05121 },
-            { name: "Mega Siemens Chowrangi", lat: 24.90597, lng: 67.00565 },
-            { name: "Lyari", lat: 24.86835, lng: 66.99618 },
-            { name: "Liaqatabad-KHI", lat: 24.90964, lng: 67.03832 },
-            { name: "Landhi", lat: 24.84046, lng: 67.18683 },
-            { name: "Karachi Malir", lat: 24.87141, lng: 67.19766 },
-            { name: "Gulshan-e-Hadid", lat: 24.86552, lng: 67.35183 },
-            { name: "Executive Shahra-e-Quaideen", lat: 24.86683, lng: 67.05254 },
-            { name: "Executive Clifton", lat: 24.82895, lng: 67.03379 },
-            { name: "DHA ,Nisar Shaheed Park", lat: 24.82647, lng: 67.06331 },
-            { name: "Big Center East", lat: 24.93853, lng: 67.15083 },
-            { name: "Awami Markaz Shahra-e-Faisal", lat: 24.87035, lng: 67.09021 },
-            { name: "Orangi Town", lat: 24.94168, lng: 66.99818 },
-            { name: "Saoodabad", lat: 24.90206, lng: 67.19748 },
-            { name: "Shah Faisal Colony", lat: 24.88466, lng: 67.14671 }
-        ];
-
-        function findNearestStation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    const userLat = position.coords.latitude;
-                    const userLng = position.coords.longitude;
-                    let nearestStation = null;
-                    let minDistance = Infinity;
-
-                    for (let station of stations) {
-                        const distance = getDistanceFromLatLonInKm(userLat, userLng, station.lat, station.lng);
-                        if (distance < minDistance) {
-                            minDistance = distance;
-                            nearestStation = station;
-                        }
-                    }
-
-                    if (nearestStation) {
-                        const directionsLink = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${nearestStation.lat},${nearestStation.lng}&travelmode=driving`;
-                        window.open(directionsLink, "_blank");
-                    }
-                });
-            } else {
-                alert("Geolocation is not supported by your browser.");
-            }
-        }
-
-        function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-            var R = 6371; // Radius of the earth in km
-            var dLat = deg2rad(lat2-lat1);  // deg2rad below
-            var dLon = deg2rad(lon2-lon1);
-            var a =
-                Math.sin(dLat/2) * Math.sin(dLat/2) +
-                Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-                Math.sin(dLon/2) * Math.sin(dLon/2);
-            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-            var distance = R * c; // Distance in km
-            return distance;
-        }
-
-        function deg2rad(deg) {
-            return deg * (Math.PI / 180);
-        }
-    </script>
-</body>
-</html></div>
-
-<div id="image4" style="position:absolute; overflow:hidden; left:418px; top:472px; width:381px; height:402px; z-index:3"><img src="images/WhatsApp Image 2024-08-04 at 16.17.18.jpeg" alt="" title="" border=0 width=381 height=402></div>
-
-<div id="image5" style="position:absolute; overflow:hidden; left:406px; top:3px; width:995px; height:448px; z-index:4"><img src="images/vote.jpeg" alt="" title="" border=0 width=995 height=448></div>
-
-<div id="text1" style="position:absolute; overflow:hidden; left:422px; top:25px; width:73px; height:28px; z-index:5">
-<div class="wpmd">
+<div id="image3"><img src="images/img9.jpg" alt="" title="" border=0 width=402 height=802><button class="find-station-button" onclick="findNearestStation()">Find Your Nearest Polling Station</button></div>
 </div>
 
 
+<div id="html1" style="z-index:2">
+        <!-- Your content goes here -->
+        <script>
+            const stations = [
+                { name: "Mega DHA Karachi", lat: 24.8362, lng: 67.07028 },
+                { name: "Mega North Nazimabad", lat: 24.94628, lng: 67.05121 },
+                { name: "Mega Siemens Chowrangi", lat: 24.90597, lng: 67.00565 },
+                { name: "Lyari", lat: 24.86835, lng: 66.99618 },
+                { name: "Liaqatabad-KHI", lat: 24.90964, lng: 67.03832 },
+                { name: "Landhi", lat: 24.84046, lng: 67.18683 },
+                { name: "Karachi Malir", lat: 24.87141, lng: 67.19766 },
+                { name: "Gulshan-e-Hadid", lat: 24.86552, lng: 67.35183 },
+                { name: "Executive Shahra-e-Quaideen", lat: 24.86683, lng: 67.05254 },
+                { name: "Executive Clifton", lat: 24.82895, lng: 67.03379 },
+                { name: "DHA ,Nisar Shaheed Park", lat: 24.82647, lng: 67.06331 },
+                { name: "Big Center East", lat: 24.93853, lng: 67.15083 },
+                { name: "Awami Markaz Shahra-e-Faisal", lat: 24.87035, lng: 67.09021 },
+                { name: "Orangi Town", lat: 24.94168, lng: 66.99818 },
+                { name: "Saoodabad", lat: 24.90206, lng: 67.19748 },
+                { name: "Shah Faisal Colony", lat: 24.88466, lng: 67.14671 }
+            ];
+
+            function findNearestStation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        const userLat = position.coords.latitude;
+                        const userLng = position.coords.longitude;
+                        let nearestStation = null;
+                        let minDistance = Infinity;
+
+                        for (let station of stations) {
+                            const distance = getDistanceFromLatLonInKm(userLat, userLng, station.lat, station.lng);
+                            if (distance < minDistance) {
+                                minDistance = distance;
+                                nearestStation = station;
+                            }
+                        }
+
+                        if (nearestStation) {
+                            const directionsLink = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${nearestStation.lat},${nearestStation.lng}&travelmode=driving`;
+                            window.open(directionsLink, "_blank");
+                        }
+                    });
+                } else {
+                    alert("Geolocation is not supported by your browser.");
+                }
+            }
+
+            function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+                var R = 6371; // Radius of the earth in km
+                var dLat = deg2rad(lat2-lat1);  // deg2rad below
+                var dLon = deg2rad(lon2-lon1);
+                var a =
+                    Math.sin(dLat/2) * Math.sin(dLat/2) +
+                    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+                    Math.sin(dLon/2) * Math.sin(dLon/2);
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                var distance = R * c; // Distance in km
+                return distance;
+            }
+
+            function deg2rad(deg) {
+                return deg * (Math.PI / 180);
+            }
+        </script>
+    </div>
+
+</div>
 </body>
 </html>
