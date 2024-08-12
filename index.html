@@ -52,6 +52,20 @@ body, html {
   flex-direction: column; 
 }
 
+button {
+   background-color: rgb(219, 219, 26); 
+    border: none;
+    color: rgb(34, 32, 32);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+}
 button:hover {
     background-color: #ebe978;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
@@ -209,8 +223,9 @@ button:hover {
   }
 
   @media (max-width: 375px){
-    .find-station-button{
-
+        .find-station-button{
+        top: 2px;
+        font-size: 11px;
     }
   }
   @media (max-width: 360px){
@@ -251,10 +266,6 @@ button:hover {
     <div class="container">
         
     <div id="image2"><img src="images/WhatsApp Image 2024-08-02 at 16.21.05.jpeg" alt="" title="" border=0 width=399 height=285></div>
-
-    <div id="button">
-        <button></button>
-    </div>
 
 <div id="image3"><img src="images/img9.jpg" alt="" title="" border=0 width=402 height=802><button class="find-station-button" onclick="findNearestStation()">Find Your Nearest Polling Station</button></div>
 </div>
