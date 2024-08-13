@@ -55,7 +55,7 @@ body, html {
     }
 
 body {
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    /* overflow-x: hidden; Prevent horizontal overflow */
 }
 
 
@@ -194,10 +194,38 @@ p{
     display: flex;
     justify-content: space-around; /* or 'center' if you want them centered */
 }
+
+ #image2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+} 
+
+.marquee-container {
+    width: 100%;
+    height: 38px;
+    overflow: hidden; 
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.marquee {
+    display: inline-block;
+    padding-left: 100%; 
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); 
+    }    
+}
+
 #image3 {
     /* position: relative;  */
     /* width: 100vw;  */
     height: auto;
+    /* max-height: 50vh; */
     /* height: (100vh - [height of other elements]); */
     display: block;
     /* margin: 0;  */
@@ -207,13 +235,6 @@ p{
     margin: 100px 0 0 0;
     width: 100%; /* Ensure the container takes full width */
 }
-
- #image2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-} 
-
 #image3 img{
     width: 100%;
     height: 100%;
@@ -548,6 +569,12 @@ p{
           </a>
         </a>
       </div>
+
+      <div class="marquee-container">
+        <div class="marquee">
+            <p>For the best experience and full functionality of this website, including viewing routes to your nearest polling station, please use <span style="color: #FF0000;">Google Chrome</span>.</p>
+        </div>
+    </div>
   
 <div id="image3"><img src="images1/img9.jpg" alt="" title="" border=0 width=402 height=802></div>
 </div>
@@ -557,24 +584,156 @@ p{
         <!-- Your content goes here -->
         <script>
             const stations = [
-                { name: "Mega DHA Karachi", lat: 24.8362, lng: 67.07028 },
-                { name: "Mega North Nazimabad", lat: 24.94628, lng: 67.05121 },
-                { name: "Mega Siemens Chowrangi", lat: 24.90597, lng: 67.00565 },
-                { name: "Lyari", lat: 24.86835, lng: 66.99618 },
-                { name: "Liaqatabad-KHI", lat: 24.90964, lng: 67.03832 },
-                { name: "Landhi", lat: 24.84046, lng: 67.18683 },
-                { name: "Karachi Malir", lat: 24.87141, lng: 67.19766 },
-                { name: "Gulshan-e-Hadid", lat: 24.86552, lng: 67.35183 },
-                { name: "Executive Shahra-e-Quaideen", lat: 24.86683, lng: 67.05254 },
-                { name: "Executive Clifton", lat: 24.82895, lng: 67.03379 },
-                { name: "DHA ,Nisar Shaheed Park", lat: 24.82647, lng: 67.06331 },
-                { name: "Big Center East", lat: 24.93853, lng: 67.15083 },
-                { name: "Awami Markaz Shahra-e-Faisal", lat: 24.87035, lng: 67.09021 },
-                { name: "Orangi Town", lat: 24.94168, lng: 66.99818 },
-                { name: "Saoodabad", lat: 24.90206, lng: 67.19748 },
-                { name: "Shah Faisal Colony", lat: 24.88466, lng: 67.14671 }
-            ];
-
+            { name: "Mega DHA Karachi", lat: 24.83620142, lng: 67.07027803 },
+            { name: "Mega North Nazimabad", lat: 24.94628251, lng: 67.05121097 },
+            { name: "Mega Siemens Chowrangi", lat: 24.90596498, lng: 67.00565192 },
+            { name: "Lyari", lat: 24.868353, lng: 66.996182 },
+            { name: "Liaqatabad-KHI", lat: 24.90964, lng: 67.038321 },
+            { name: "Landhi", lat: 24.840458, lng: 67.186829 },
+            { name: "Karachi Malir", lat: 24.87141, lng: 67.19766 },
+            { name: "Gulshan-e-Hadid", lat: 24.865517, lng: 67.351829 },
+            { name: "Executive Shahra-e-Quaideen", lat: 24.866828, lng: 67.052537 },
+            { name: "Executive Clifton", lat: 24.8289461, lng: 67.0337871 },
+            { name: "DHA ,Nisar Shaheed Park", lat: 24.826469, lng: 67.063311 },
+            { name: "Big Center East", lat: 24.938527, lng: 67.150829 },
+            { name: "Awami Markaz Shahra-e-Faisal", lat: 24.870347, lng: 67.090207 },
+            { name: "Orangi Town", lat: 24.941679, lng: 66.998183 },
+            { name: "Saoodabad", lat: 24.90205792, lng: 67.19747808 },
+            { name: "Shah Faisal Colony", lat: 24.88465447, lng: 67.14671186 },
+            { name: "Mega Blue Area ISB", lat: 33.709384, lng: 73.056145 },
+            { name: "Taramri", lat: 33.642897, lng: 73.160028 },
+            { name: "Bhara Khu", lat: 33.743752, lng: 73.187266 },
+            { name: "PHQ Islamabad", lat: 33.67197859, lng: 73.01984004 },
+            { name: "Attock", lat: 33.808341, lng: 72.361529 },
+            { name: "Bahawalnagar", lat: 29.990277, lng: 73.228014 },
+            { name: "Bahawalpur", lat: 29.39702, lng: 71.65536 },
+            { name: "Chakwal", lat: 32.940527, lng: 72.859305 },
+            { name: "Dera Ghazi Khan", lat: 30.038084, lng: 70.646629 },
+            { name: "G.M.Abad Faisalabad", lat: 31.4332952, lng: 73.0454575 },
+            { name: "Executive samanabad", lat: 31.3942449, lng: 73.0753046 },
+            { name: "Big NRC Faisalabad", lat: 31.402097, lng: 73.1045064 },
+            { name: "Executive Jhang Road Faisalabad", lat: 31.4043315, lng: 73.0436747 },
+            { name: "EPO Gujranwala", lat: 32.222927, lng: 74.169987 },
+            { name: "Gujrat", lat: 32.5878357, lng: 74.0515262 },
+            { name: "Hasanabdal", lat: 33.822153, lng: 72.677038 },
+            { name: "Jhang", lat: 31.278073, lng: 72.333609 },
+            { name: "Jhelum", lat: 32.56341, lng: 73.44003 },
+            { name: "Khanewal", lat: 30.31189, lng: 71.94873 },
+            { name: "Khushab", lat: 32.3005502, lng: 72.3526126 },
+            { name: "DHA Phase IV Lahore", lat: 31.461836, lng: 74.384554 },
+            { name: "Zarar Shaheed Road-1", lat: 31.54612741, lng: 74.41710457 },
+            { name: "Hair", lat: 31.41043259, lng: 74.48897011 },
+            { name: "Mega Data Gunj Bukhsh", lat: 31.56167832, lng: 74.29876961 },
+            { name: "Mega Peco Road", lat: 31.46605054, lng: 74.31056207 },
+            { name: "Kahna nau", lat: 31.54612741, lng: 74.41710457 },
+            { name: "NRC Barki", lat: 31.47359137, lng: 74.51686576 },
+            { name: "DHA Lahore", lat: 31.48407042, lng: 74.39365165 },
+            { name: "DSFU Abbot Road Lahore", lat: 31.56390604, lng: 74.32928739 },
+            { name: "Chung", lat: 31.40285725, lng: 74.16114333 },
+            { name: "Raiwind", lat: 31.26043756, lng: 74.22034656 },
+            { name: "Jallo", lat: 31.59540348, lng: 74.48251201 },
+            { name: "Layyah", lat: 30.966957, lng: 70.973946 },
+            { name: "Mianwali", lat: 32.58037, lng: 71.5366375 },
+            { name: "Multan cantt", lat: 30.207491, lng: 71.460629 },
+            { name: "Multan City", lat: 30.234156, lng: 71.515665 },
+            { name: "NRC Multan", lat: 30.240859, lng: 71.483093 },
+            { name: "Mumtazabad", lat: 30.171778, lng: 71.479474 },
+            { name: "Muzaffaragarh", lat: 30.073063, lng: 71.185395 },
+            { name: "Okara", lat: 30.79572532, lng: 73.42213012 },
+            { name: "Rahim Yar khan", lat: 28.436878, lng: 70.306419 },
+            { name: "Mega Murree Road Rwp", lat: 33.636184, lng: 73.075038 },
+            { name: "Bakra Mandi-RWP", lat: 33.570607, lng: 73.036678 },
+            { name: "Rawalpindi Cantt", lat: 33.585815, lng: 73.054442 },
+            { name: "Rawat", lat: 33.501351, lng: 73.195051 },
+            { name: "Adiala Road", lat: 33.547248, lng: 73.054887 },
+            { name: "Ckakri", lat: 33.306112, lng: 72.775497 },
+            { name: "Sahiwal", lat: 30.6795589, lng: 73.1211406 },
+            { name: "Sargodha city", lat: 32.0892178, lng: 72.6592755 },
+            { name: "Sheikhupura", lat: 31.711337, lng: 73.966301 },
+            { name: "Big NRC Sialkot", lat: 32.4956617, lng: 74.50083994 },
+            { name: "Taxila", lat: 33.749392, lng: 72.804902 },
+            { name: "Wah Cantt", lat: 33.763275, lng: 72.77035 },
+            { name: "Toba Tek Singh", lat: 30.9608883, lng: 72.4883779 },
+            { name: "Vehari", lat: 30.038309, lng: 72.358317 },
+            { name: "MRV", lat: 30.165208, lng: 70.956569 },
+            { name: "Sadiqabad", lat: 28.334979, lng: 70.136421 },
+            { name: "Badin", lat: 24.65948096, lng: 68.84810536 },
+            { name: "Dadu", lat: 26.729869, lng: 67.751754 },
+            { name: "Ghotki", lat: 28.005113, lng: 69.329932 },
+            { name: "Big NRC Hyderabad", lat: 25.364123, lng: 68.360581 },
+            { name: "Hyderabad Heeraabad", lat: 25.39973597, lng: 68.36639504 },
+            { name: "State life building", lat: 25.37978278, lng: 68.33628048 },
+            { name: "Qasimabad", lat: 25.39045298, lng: 68.33479224 },
+            { name: "Pakka Qila", lat: 25.38562859, lng: 68.37206807 },
+            { name: "Joccoabbad", lat: 28.23877483, lng: 68.47160235 },
+            { name: "KOTRI", lat: 28.238635, lng: 68.471474 },
+            { name: "Kandhkot", lat: 28.232422, lng: 69.185646 },
+            { name: "Kashmore", lat: 28.44152, lng: 69.59552 },
+            { name: "Hala", lat: 25.81760087, lng: 68.41741237 },
+            { name: "Rohri", lat: 27.684964, lng: 68.883882 },
+            { name: "Khairpur", lat: 27.5165065, lng: 68.76170594 },
+            { name: "Larkana", lat: 27.5774344, lng: 68.22489446 },
+            { name: "Mirpur Khas", lat: 25.52632577, lng: 69.00764756 },
+            { name: "Nosheroferoz", lat: 26.8354535, lng: 68.1131708 },
+            { name: "Sanghar", lat: 26.0436975, lng: 68.9359839 },
+            { name: "Nawab Shah", lat: 26.247948, lng: 68.430483 },
+            { name: "Shikarpur", lat: 27.940992, lng: 68.652662 },
+            { name: "Pano Aqil", lat: 27.86676947, lng: 69.11901085 },
+            { name: "Sukkur City", lat: 27.72398108, lng: 68.82849469 },
+            { name: "Tando Muhammad Khan", lat: 25.123346, lng: 68.543715 },
+            { name: "Tharparkar(mitthi)", lat: 24.74749422, lng: 69.79468784 },
+            { name: "Thatta", lat: 24.750631, lng: 67.919084 },
+            { name: "Umar kot", lat: 25.36776803, lng: 69.73531948 },
+            { name: "Gumbat", lat: 27.35593359, lng: 68.53444498 },
+            { name: "Executive Daharki", lat: 28.046148, lng: 69.672627 },
+            { name: "Islamkot", lat: 24.69923974, lng: 70.17454969 },
+            { name: "Dera Bugti", lat: 29.032355, lng: 69.156957 },
+            { name: "Gwadar", lat: 25.198828, lng: 62.34399 },
+            { name: "Turbat", lat: 26.003195, lng: 63.068208 },
+            { name: "khuzdar", lat: 27.805002, lng: 66.601693 },
+            { name: "Lasbela/ Hub", lat: 25.037027, lng: 66.873873 },
+            { name: "Loralai", lat: 30.374874, lng: 68.60173 },
+            { name: "Naseerabad (Dera Murad Jamali)", lat: 28.54363889, lng: 68.21719444 },
+            { name: "Panjgur", lat: 26.976877, lng: 64.111089 },
+            { name: "Chaghi/Noshki", lat: 29.554137, lng: 66.016608 },
+            { name: "Sariab Road ,Quetta", lat: 30.174984, lng: 66.993421 },
+            { name: "Quetta Central", lat: 30.205257, lng: 67.005182 },
+            { name: "Quetta Cantt", lat: 30.217013, lng: 67.034301 },
+            { name: "Mega Quetta", lat: 30.249008, lng: 66.978471 },
+            { name: "VIP NRC RHO Quetta", lat: 30.177226, lng: 66.999223 },
+            { name: "Sibbi", lat: 29.544981, lng: 67.884298 },
+            { name: "Zhob", lat: 31.347837, lng: 69.455967 },
+            { name: "Abbotabad", lat: 34.141323, lng: 73.21339 },
+            { name: "Kohistan", lat: 35.266611, lng: 73.222907 },
+            { name: "Bannu", lat: 32.98893, lng: 70.598142 },
+            { name: "Charsadda", lat: 34.15738334, lng: 71.75061186 },
+            { name: "Chitral", lat: 35.850379, lng: 71.792113 },
+            { name: "Dera Ismail Khan", lat: 31.81269444, lng: 70.91877778 },
+            { name: "Haripur", lat: 33.9908658, lng: 72.9571986 },
+            { name: "Kohat", lat: 33.6056642, lng: 71.4631905 },
+            { name: "Karak", lat: 33.105049, lng: 71.10359 },
+            { name: "Mansehra", lat: 34.352296, lng: 73.201224 },
+            { name: "Mardan", lat: 34.140194, lng: 72.024882 },
+            { name: "Nowshera", lat: 34.008412, lng: 72.042665 },
+            { name: "Mega PESHAWAR", lat: 34.0089211, lng: 71.5150907 },
+            { name: "Mega Ring Road PSH", lat: 34.02119357, lng: 71.62129604 },
+            { name: "Peshawar cantt", lat: 33.9998334, lng: 71.5452665 },
+            { name: "Peshawar", lat: 33.997689, lng: 71.465068 },
+            { name: "VIP NRC RHO Peshawar", lat: 33.991318, lng: 71.440272 },
+            { name: "Swabi", lat: 34.096403, lng: 72.462503 },
+            { name: "Swat", lat: 34.7697889, lng: 72.3404312 },
+            { name: "Malakand", lat: 34.61373, lng: 71.9611 },
+            { name: "MCE – NADRA Mobile Van", lat: 34.052822, lng: 71.989185 },
+            { name: "Dir Lower", lat: 34.8357696, lng: 71.8447333 },
+            { name: "Chakdara", lat: 34.663831, lng: 72.03843 },
+            { name: "Kotli", lat: 33.522821, lng: 73.906731 },
+            { name: "Mirpur", lat: 33.1444172, lng: 73.745743 },
+            { name: "Muzaffarabad", lat: 34.344519, lng: 73.464739 },
+            { name: "Rawalakot", lat: 33.853865, lng: 73.752478 },
+            { name: "Gilgit", lat: 35.91176, lng: 74.347487 },
+            { name: "Skardu", lat: 35.29302, lng: 75.650371 },
+            { name: "Diamir", lat: 35.412062, lng: 74.105408 }
+        ];
             function findNearestStation() {
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {
