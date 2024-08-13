@@ -76,6 +76,16 @@ button:hover {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
+p{
+    position: relative;
+    text-align: center;
+    font-size: 33px;
+    margin-top: 2px;
+    top: -55px;
+    left: 84px;
+    font-weight: 100;
+}
+
 #button {
     position: relative;
     display: flex;
@@ -84,10 +94,10 @@ button:hover {
 }
 
 .find-station-button {
-  width: 39%;  
+  width: 35%;  
   position: relative;
   top: 0; /* Adjusted top position */
-  left: 50%;
+  left: 25%;
   transform: translateX(-50%);
   padding: 20px 41px;
   margin-top: 11px;
@@ -218,7 +228,18 @@ button:hover {
         margin-top: 20px; /* Adjust as needed */
         margin-right: 58px;
         top: 53px;
-}
+    }
+
+    p{
+        position: relative; 
+        text-align: center; 
+        font-size: 15px; 
+        margin-top: 5px; 
+        top: 24px;
+        left: 57px; 
+        font-weight:2px;
+
+    }
 
     #image3 {
         position: relative; 
@@ -241,8 +262,8 @@ button:hover {
       text-align: center;
     }
     .find-station-button {
-        margin-top: 335px;
-        left: 44%;
+        margin-top: 324px;
+        left: 17%;
         transform: translateX(-50%);
         padding: 7px 0px;
         cursor: pointer;
@@ -295,22 +316,25 @@ button:hover {
 <body>
     <div class="container">
         
-    <div id="image2"><img src="images1/WhatsApp Image 2024-08-02 at 16.21.05.jpeg" alt="" title="" border=0 width=399 height=285></div>
+        <div id="image2">
+            <img src="images1/WhatsApp Image 2024-08-02 at 16.21.05.jpeg" alt="" title="" border=0 width=399 height=285>
+          </div>
 
     <button class="find-station-button" onclick="findNearestStation()">Find Your Nearest Polling Station</button>
+    <p>Click here to find your nearest station</p>
 
     <div id="button" style="display: inline-flex; justify-content: center;">
-        <button>Civil</button>
-        <button>Electrical</button>
-        <button>Mechanical</button>
-        <button>Computer</button>
-        <button>Electronics</button>
-        <button>Chemical</button>
-        <button>Agricultural</button>
-        <button>Mechatronics</button>
-        <button>Telecom</button>
-      </div>
-
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_3aee7c4a.jpg')">Civil</button>
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_4d53c4b1.jpg')">Electrical</button>
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_a9fc012d.jpg')">Mechanical</button>
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_c93e4046.jpg')">Computer</button>
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_e9ffb674.jpg')">Electronics</button>
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.56_52ba58f9.jpg')">Chemical</button>
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.56_570bbd79.jpg')">Agricultural</button>
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.56_c5133508.jpg')">Mechatronics</button>
+      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.38.01_f26cddc1.jpg')">Telecom</button>
+    </div>
+  
 <div id="image3"><img src="images1/img9.jpg" alt="" title="" border=0 width=402 height=802></div>
 </div>
 
@@ -378,6 +402,11 @@ button:hover {
 
             function deg2rad(deg) {
                 return deg * (Math.PI / 180);
+            }
+
+            function changeImage(button, imageName) {
+                button.style.backgroundImage = `url('images1/${imageName}')`;
+                button.style.color = 'transparent'; // Hide the text 
             }
         </script>
     </div>
