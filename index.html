@@ -62,8 +62,7 @@ button {
   text-decoration: none;
   display: inline-block; 
   font-size: 16px;
-  margin: 6px 4px;  
- /* Adjusted margin for better spacing */
+  margin: 6px 4px;  /* Adjusted margin for better spacing */
   cursor: pointer;  
   left: 18px; 
   border-radius: 5px;
@@ -86,11 +85,21 @@ p{
     font-weight: 100;
 }
 
+#tep-panel-heading {
+  position: relative;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 10px; 
+  word-break: break-word; /* Allow long words to break */
+  left: 20px;
+}
 #button {
     position: relative;
     display: flex;
     justify-content: center; 
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .find-station-button {
@@ -190,13 +199,21 @@ p{
     .find-station-button {
         top: 13px;
         position: absolute;
-        left: 52%; /* Adjusted left position */
+        left: 50%; /* Adjusted left position */
         transform: translateX(-50%);
         padding: 23px 10px;
         cursor: pointer;
         z-index: 5;
         width: 37%;
         font-size: 15px;
+    }
+    #tep-panel-heading {
+        font-size: 24px; 
+  }
+    p {
+        font-size: 20px; 
+        left: 0; 
+        word-break: break-word;
   }
   }
 
@@ -221,6 +238,11 @@ p{
         /* display: block;
         margin-bottom: 10px; */
     }
+
+    p {
+        font-size: 16px; 
+        word-break: break-word;
+    }
     #button {
         display: flex;
         justify-content: center; 
@@ -228,6 +250,10 @@ p{
         margin-top: 20px; /* Adjust as needed */
         margin-right: 58px;
         top: 53px;
+    }
+    #button button {
+        padding: 10px 20px; 
+        font-size: 14px; 
     }
 
     p{
@@ -238,7 +264,10 @@ p{
         top: 24px;
         left: 57px; 
         font-weight:2px;
+    }
 
+    #tep-panel-heading {
+        font-size: 18px; 
     }
 
     #image3 {
@@ -322,6 +351,8 @@ p{
 
     <button class="find-station-button" onclick="findNearestStation()">Find Your Nearest Polling Station</button>
     <p>Click here to find your nearest station</p>
+
+    <h2 id="tep-panel-heading">To view TEP Panel click on your respective Discipline</h2> 
 
     <div id="button" style="display: inline-flex; justify-content: center;">
       <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_3aee7c4a.jpg')">Civil</button>
