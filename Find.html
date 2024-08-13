@@ -41,6 +41,7 @@ DIV,UL,OL /* Left */
 body, html { 
     height: 100%;
     margin: 0;
+    padding: 0;
 }
 .container {
   position: relative;
@@ -70,7 +71,7 @@ button {
   font-size: 16px;
   margin: 6px 4px;  /* Adjusted margin for better spacing */
   cursor: pointer;  
-  left: 18px; 
+  left: 20px; 
   border-radius: 5px;
   transition: background-color 0.3s ease;
   flex-shrink: 0; 
@@ -106,13 +107,21 @@ p{
     justify-content: center; 
     flex-wrap: wrap;
     cursor: pointer;
+    /* left: 300px;  */
+    gap: 10px; /* Add some space between buttons */
+    padding: 0 20px;
+    /* margin-left: 20px;
+    margin-right: 50px; */
 }
 
 #button button {
   /* ... other styles ... */
   width: auto; /* Allow buttons to adjust width based on content */
-  flex: 1 0 auto; /* Allow buttons to grow and shrink */
+  flex: 1 0 45%; /* Allow buttons to grow and shrink */
+  min-width: 150px; /* Adjust as needed */
+  max-width: 300px; /* Adjust as needed */
 }
+
 
 .find-station-button {
   width: 35%;  
@@ -130,6 +139,7 @@ p{
   z-index: 2;
   font-size: 24px;
   font-weight: bold;
+  margin-right: 12px;
 }
 
 #image2 {
@@ -144,10 +154,13 @@ p{
     position: relative; 
     /* width: 100vw; 
     height: 100vh;  */
-    height: auto;
+    height: (100vh - [height of other elements]);
     display: block;
     /* margin: 0;  */
-    margin: -2px 0 0 0;
+    /* margin: -2px 0 0 0; */
+    padding: 0;
+    flex-grow: 1;  /* Allow image3 to grow and take up remaining space */
+    margin: 100px 0 0 0;
 }
 
  #image2 img, #image3 img {
@@ -158,7 +171,9 @@ p{
 
 #image3 img{
   margin-top: 130px; /* Adjusted margin-top */
-  margin-bottom: 0; 
+  margin-bottom: 25px; 
+  /* margin: 0; Reset margin on the image */
+  padding: 0; /* Reset padding on the image */
 }
 
 #html1 {
@@ -225,6 +240,7 @@ p{
     p {
         font-size: 20px; 
         left: 0; 
+        margin-top: 15px;
         word-break: break-word;
   }
   }
@@ -252,14 +268,15 @@ p{
     }
 
     p {
-        font-size: 16px; 
+        font-size: 14px; 
         word-break: break-word;
+        margin-top: 10px;
     }
     #button {
         display: flex;
         justify-content: center; 
         flex-wrap: wrap;
-        margin-top: 20px; /* Adjust as needed */
+        margin-top: -10px; /* Adjust as needed */
         margin-right: 58px;
         top: 53px;
     }
@@ -276,10 +293,14 @@ p{
         top: 24px;
         /* left: 57px;  */
         font-weight:2px;
+        width: 134%;
     }
 
-    #tep-panel-heading {
-        font-size: 18px; 
+    #tep-panel-heading { 
+        font-size: 24px;
+        margin-top: 99px;
+        width: 65%;
+        margin-left: 57px;
     }
 
     #image3 {
@@ -304,6 +325,7 @@ p{
     }
     .find-station-button {
         margin-top: 324px;
+        /* margin-top: 400px; */
         left: 17%;
         transform: translateX(-50%);
         padding: 7px 0px;
@@ -367,16 +389,34 @@ p{
     <h2 id="tep-panel-heading">To view TEP Panel click on your respective Discipline</h2> 
 
     <div id="button" style="display: inline-flex; justify-content: center;">
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_3aee7c4a.jpg')">Civil</button>
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_4d53c4b1.jpg')">Electrical</button>
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_a9fc012d.jpg')">Mechanical</button>
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_c93e4046.jpg')">Computer</button>
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.55_e9ffb674.jpg')">Electronics</button>
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.56_52ba58f9.jpg')">Chemical</button>
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.56_570bbd79.jpg')">Agricultural</button>
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.36.56_c5133508.jpg')">Mechatronics</button>
-      <button onclick="changeImage(this, 'WhatsApp Image 2024-08-12 at 12.38.01_f26cddc1.jpg')">Telecom</button>
-    </div>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.36.55_3aee7c4a.jpg" target="_blank">
+          <button>Civil</button>
+        </a>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.36.55_4d53c4b1.jpg" target="_blank">
+          <button>Electrical</button>
+        </a>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.36.55_a9fc012d.jpg" target="_blank">
+          <button>Mechanical</button>
+        </a>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.36.55_c93e4046.jpg" target="_blank">
+          <button>Computer</button>
+        </a>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.36.55_e9ffb674.jpg" target="_blank">
+          <button>Electronics</button>
+        </a>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.36.56_52ba58f9.jpg" target="_blank">
+          <button>Chemical</button>
+        </a>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.36.56_570bbd79.jpg" target="_blank">
+          <button>Agricultural</button>
+        </a>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.36.56_c5133508.jpg" target="_blank">
+          <button>Mechatronics</button>
+        </a>
+        <a href="images1/WhatsApp Image 2024-08-12 at 12.38.01_f26cddc1.jpg" target="_blank">
+          <button>Telecom</button>
+        </a>
+      </div>
   
 <div id="image3"><img src="images1/img9.jpg" alt="" title="" border=0 width=402 height=802></div>
 </div>
@@ -445,11 +485,6 @@ p{
 
             function deg2rad(deg) {
                 return deg * (Math.PI / 180);
-            }
-
-            function changeImage(button, imageName) {
-                button.style.backgroundImage = `url('images1/${imageName}')`;
-                button.style.color = 'transparent'; // Hide the text 
             }
         </script>
     </div>
