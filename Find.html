@@ -298,12 +298,17 @@ p {
         left: 39%;
     }
 }
-@media (max-width: 876px) {
-    .find-station-button {
+@media (max-width: 853px) {
+    /* .find-station-button {
         padding: 22px 22px;
         font-size: 14px;
         top: 16px;
         left: 94px;
+    } */
+    .find-station-container p {
+        margin-right: -17%;
+        margin-top: -48px;
+        font-size: 16px;
     }
 }
 @media (max-width: 828px){
@@ -548,7 +553,7 @@ p {
         margin-left: 56px;
         bottom: 13px;
     }
-    #button1 a button {
+    /* #button1 a button {
         background-color: rgb(231, 36, 36) !important;
         color: white !important;
         border-radius: 5px !important;
@@ -556,16 +561,17 @@ p {
         margin-right: 34px;
         padding: 9px;
         margin-top: 41px;
-    }
+    } */
 
     #button {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin-top: 6px;
+        margin-top: 1%;
         /* margin-right: 58px; */
         top: 53px;
         margin-left: -10px;
+        margin-bottom: 26%;
     }
 
     #button1 a button {
@@ -578,26 +584,37 @@ p {
         margin-top: 21px;
     }
 
+    .find-station-container {
+        position: relative;
+        font-size: 12px;
+        margin-top: -4px;
+        margin-bottom: 6%;
+        top: -14px;
+        margin-right: 45px;
+    }
+
+    .find-station-container p {
+        font-size: 12px;
+        margin-left: 47%;
+    }
+
     .find-station-container .find-station-button {
     width: 36%;
     /* position: relative; */
     top: 0;
-    left: 20%;
+    left: 15%;
     transform: translateX(-50%);
     /* padding: 20px 31px; */
-    padding: 5px 11px;
-    margin-top: 280px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 2;
+    margin-top: 10px;
     font-size: 11px;
-    font-weight: bold;
-    margin-right: 12px;
 }
 
+    .marquee-container {
+        margin-top: 6px;
+    }
+    .marquee {
+        margin-top: 11px;
+    }
 
     p{
         margin-top: -29px;
@@ -615,7 +632,7 @@ p {
     }
 
     .heading-button-container {
-        margin-top: -10px;
+        margin-top: 20px; /* Add some top margin for separation */
     }
 
     #image2 img{
@@ -624,12 +641,6 @@ p {
         object-fit: cover;  /* or object-fit: contain, depending on your preference */
         margin-bottom: 0px;
     }
-    .marquee{
-        margin-top: -6px;
-    }
-    .marquee-container {
-        margin-top: -8px;
-    }    
 
     #image3 {
         margin: -88px 0 0 0; 
