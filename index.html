@@ -204,19 +204,19 @@ p{
 .marquee-container {
     width: 100%;
     height: 38px;
-    overflow: hidden; 
+    overflow: visible; 
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 .marquee {
     display: inline-block;
-    padding-left: 100%; 
+    /* padding-left: 100%;  */
     animation: marquee 15s linear infinite;
 }
 
 @keyframes marquee {
-    0% { transform: translateX(0); }
+    0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); 
     }    
 }
@@ -347,7 +347,7 @@ p{
         font-weight: 500;
         width: 43%;
         /* text-align: center; */
-        top: 20px;
+        top: 14px;
         left: 164px;
         right: 16px;
     }
@@ -436,13 +436,13 @@ p{
         padding: 9px;
         margin-top: 41px;
     }
-
+}
     
 
 
   @media (max-width: 375px){
     .find-station-button {
-        top: 1px;
+        top: 35px;
         font-size: 11px;
         left: 78px;
     }
@@ -465,7 +465,6 @@ p{
         padding: 9px;
         margin-top: 41px;
     }
-}
 
     #button {
         display: flex;
@@ -530,6 +529,12 @@ p{
             <img src="images1/WhatsApp Image 2024-08-02 at 16.21.05.jpeg" alt="" title="" border=0 width=399 height=285>
           </div>
 
+          <div class="marquee-container">
+            <div class="marquee">
+                <p>For the best experience and full functionality of this website, including viewing routes to your nearest polling station, please use <span style="color: #FF0000;">Google Chrome</span>.</p>
+            </div>
+        </div>
+
     <button class="find-station-button" onclick="findNearestStation()">Find Your Nearest Polling Station</button>
     <p>Click here to Google Directions to your nearest Polling Station</p>
 
@@ -570,11 +575,6 @@ p{
         </a>
       </div>
 
-      <div class="marquee-container">
-        <div class="marquee">
-            <p>For the best experience and full functionality of this website, including viewing routes to your nearest polling station, please use <span style="color: #FF0000;">Google Chrome</span>.</p>
-        </div>
-    </div>
   
 <div id="image3"><img src="images1/img9.jpg" alt="" title="" border=0 width=402 height=802></div>
 </div>
