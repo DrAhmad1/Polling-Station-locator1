@@ -230,7 +230,7 @@ p{
 }
 
 #image3 {
-    /* position: relative;  */
+    position: relative; 
     /* width: 100vw;  */
     height: auto;
     /* max-height: 50vh; */
@@ -240,17 +240,18 @@ p{
     /* margin: -2px 0 0 0; */
     padding: 0;
     flex-grow: 1;  /* Allow image3 to grow and take up remaining space */
-    margin: 20px 0 0 0;
+    /* margin: 20px 0 0 0; */
     width: 100%; /* Ensure the container takes full width */
 }
 #image3 img{
     width: 100%;
     height: 100%;
     object-fit: cover; 
-    margin-top: 130px; /* Adjusted margin-top */
-    margin-bottom: 25px; 
+    /* margin-top: 130px; Adjusted margin-top */
+    margin-bottom: 74px; 
   /* margin: 0; Reset margin on the image */
     padding: 0; /* Reset padding on the image */
+    top: 60px;
 }
 
 #html1 {
@@ -282,7 +283,14 @@ p{
 
 @media (max-width: 788px){
     .find-station-button {
-        top: 41px;
+        top: 16px;
+    }
+    p{
+        top: -60px;
+        left: 25%;
+    }
+    .marquee-container{
+        margin-top: 2px;
     }
 }
 
@@ -335,7 +343,7 @@ p{
         margin: 0;
     }
 
-    #image2, #image3{
+    #image2{
         width: 100%;
         height: auto;
         display: block;
@@ -344,6 +352,12 @@ p{
         margin-bottom: 10px; */
     }
 
+    #image3{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+    }
     p {
         /* position: relative; */
         position: relative;
@@ -358,6 +372,11 @@ p{
         top: 14px;
         left: 164px;
         right: 16px;
+    }
+
+    button{
+        padding: 14px 8px;
+        margin: 4px 4px;
     }
     #button {
         display: flex;
@@ -376,7 +395,7 @@ p{
     #button1 a button {
         margin-top: 48px;
         margin-left: 6px;
-        font-size: 14px;
+        font-size: 11px;
     }
 
     #tep-panel-heading { 
@@ -393,9 +412,9 @@ p{
 
     #image3 {
         position: relative; 
-        /* width: 233px;  Remove this to allow full-width expansion */
+        /* width: 233px;  Remove this to allow full-width expansion
         height: 100vh; 
-        margin: -43px 0 0 0;
+        margin: -43px 0 0 0; */
     }
     #image3 img { 
       width: 100%;
@@ -412,7 +431,7 @@ p{
       text-align: center;
     }
     .find-station-button {
-        margin-top: 346px;
+        margin-top: 341px;
         /* margin-top: 400px; */
         left: 18%;
         transform: translateX(-50%);
@@ -424,10 +443,15 @@ p{
     }
 }
 
-
+@media (max-width: 390px) {
+    .find-station-button {
+        margin-top: 322px;
+        left: 20%;
+    }
+}
   @media (max-width: 388px){
     .find-station-button {
-        margin-top: 285px;
+        margin-top: 322px;
   }
 
   #button {
@@ -455,7 +479,7 @@ p{
 
   @media (max-width: 375px){
     .find-station-button {
-        top: 8px;
+        top: -39px;
         font-size: 11px;
         left: 78px;
     }
@@ -464,7 +488,7 @@ p{
     #tep-panel-heading {
         position: relative;
         font-size: 13px;
-        margin-top: 70px;
+        margin-top: 45px;
         width: 65%;
         margin-left: 56px;
         bottom: 13px;
@@ -492,19 +516,20 @@ p{
     #button1 a button {
         background-color: rgb(231, 36, 36) !important;
         color: white !important;
-        border-radius: 5px !important;
-        font-size: 13px;
+        border-radius: 12px !important;
+        font-size: 12px;
         margin-right: 34px;
         padding: 16px;
         margin-top: 21px;
 }
     p{
-        margin-top: -24px;
+        margin-top: -29px;
+        margin-bottom: 11px
     }
 
     #image3 img {
-    margin-top: 130px;
-    margin-bottom: 25px;
+    /* margin-top: 0px; */
+    margin-bottom: 74px;
     padding: 0;
     width: 100%;
     height: auto;
@@ -519,6 +544,7 @@ p{
         width: 100%;
         height: 92%;
         object-fit: cover;  /* or object-fit: contain, depending on your preference */
+        margin-bottom: 0px;
     }
     .marquee{
         margin-top: -6px;
