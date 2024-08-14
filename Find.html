@@ -1,6 +1,7 @@
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
+<head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
 <title>Polling Station Locator</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 <meta name="generator" content="Web Page Maker (unregistered version)">
@@ -44,7 +45,7 @@ body, html {
     padding: 0;
 }
 .container {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: 100%;
     top: 0;
@@ -53,6 +54,18 @@ body, html {
     flex-direction: column; 
     overflow-x: hidden;
     }
+
+container > * { 
+    margin-left: auto;
+    margin-right: auto;
+    /* text-align: center;  */
+}
+
+.find-station-container {
+    /* display: flex; */
+    text-align: center; /* Center content within the container */
+    margin-bottom: 20px; /* Add some spacing below the container */
+}
 
 /* body { */
     /* overflow-x: hidden; Prevent horizontal overflow */
@@ -90,16 +103,28 @@ button:hover {
 }
 
 
-p{
-    position: relative;
+.find-station-container p {
+    /* position: relative; */
     /* text-align: center; */
-    font-size: 16px;
-    margin-top: 1px;
-    top: -40px;
-    left: 23%;
+    font-size: 20px;
+    margin-top: -40px;
+    top: -22px;
+    left: 2%;
     font-weight: 600;
     /* right: 202px; */
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 11px;
+    margin-right: 80px;
+}
+
+.heading-button-container{
+    margin-top: 22px;
+}
+
+p {
+    left: 0; /* Reset left positioning for centering */
+    text-align: center; 
+    font-size: 20px;
 }
 
 #tep-panel-heading {
@@ -152,11 +177,11 @@ p{
 
 }
 
-.find-station-button {
-    width: 20%;  
-    position: relative;
-    top: 0; /* Adjusted top position */
-    left: 12%;
+.find-station-container .find-station-button {
+    width: 23%;
+    /* position: relative; */
+    top: 0;
+    left: -30%;
     transform: translateX(-50%);
     /* padding: 20px 31px; */
     padding: 15px 30px;
@@ -167,9 +192,14 @@ p{
     border-radius: 5px;
     cursor: pointer;
     z-index: 2;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
-    margin-right: 12px;
+    margin-left: -40%;
+}
+
+.find-station-button {
+    width: auto; /* Let the button size itself based on content */
+    display: inline-block; /* Allow the button to be centered */
 }
 
 .find-station-button:hover {
@@ -180,8 +210,8 @@ p{
 
 #image2 {
     width: 100%;
-    /* max-height: auto; */
-    aspect-ratio: 16/9;
+    max-height: auto;
+    /* aspect-ratio: 16/9; */
     /* height: 200px; */
     display: block;
     margin: 0;
@@ -194,7 +224,7 @@ p{
 
 #tep-panel-heading, #button1 {
     display: inline-flex; /* or just 'flex' if you want them to take full width */
-    align-items: center;  /* Vertically align items in the center */
+     /* align-items: center;   */
 }
 
 .heading-button-container {
@@ -247,7 +277,7 @@ p{
     width: 100%;
     height: 100%;
     object-fit: cover; 
-    margin: 20px 0 0 0;
+    margin: 48px 0 0 0;
     /* margin-top: 130px; Adjusted margin-top */
     margin-bottom: 74px; 
   /* margin: 0; Reset margin on the image */
@@ -309,18 +339,33 @@ p{
     #text1 {
         text-align: center;
     }
+
+    .find-station-container{
+        position: relative;
+    }
     .find-station-button {
         top: 13px;
         position: absolute;
+        margin: 0 auto 10px;
         left: 50%; /* Adjusted left position */
         transform: translateX(-50%);
         padding: 23px 10px;
-        cursor: pointer;
-        z-index: 5;
-        width: 37%;
-        font-size: 15px;
     }
-    #tep-panel-heading {
+
+    .find-station-container .find-station-button {
+        position: relative;
+        top: -5px;
+        left: -10%;
+        transform: translateX(-50%);
+        /* padding: 20px 31px; */
+        padding: 15px 30px;
+}
+
+    .find-station-container p {
+        margin-top: 0; 
+    }
+}
+    /* #tep-panel-heading {
         font-size: 20px; 
   }
     p {
@@ -329,7 +374,8 @@ p{
         margin-top: 15px;
         word-break: break-word;
     }
-}
+
+} */
 
   @media (max-width: 548px) {
     .find-station-button{
@@ -352,28 +398,39 @@ p{
         /* display: block;
         margin-bottom: 10px; */
     }
-
     #image3{
         width: 100%;
         height: auto;
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
+        position: relative; 
+        margin: 48px 0 0 0;
     }
-    p {
-        /* position: relative; */
+    .find-station-button {
+        top: 16px;
+    }
+    p{
+        top: -60px;
+        left: 25%;
+    }
+    .marquee-container{
+        margin-top: 2px;
+    }
+
+    .find-station-container {
         position: relative;
-        word-break: break-word;
-        /* margin-top: 10px; */
-        /* text-align: center; */
-        font-size: 12px;
-        margin-top: -14px;
-        font-weight: 500;
-        width: 43%;
-        /* text-align: center; */
-        top: 14px;
-        left: 164px;
-        right: 16px;
+        margin-top: 14px;
     }
+
+    .find-station-container p {
+        font-size: 12px;
+        margin-top: -68px;
+        /* top: 2px;
+        left: 35%; */
+        margin-left: 48%;
+    }
+
+
 
     button{
         padding: 14px 8px;
@@ -404,19 +461,16 @@ p{
         margin-top: 57px;
         width: 72%;
         margin-left: 57px;
-}
+    }
     .heading-button-container {
         display: flex;
         justify-content: space-around;
         margin-top: 8px;
+        margin-top: -30px;
+        justify-content: center;
+        align-items: center;
     }
 
-    #image3 {
-        position: relative; 
-        /* width: 233px;  Remove this to allow full-width expansion
-        height: 100vh; 
-        margin: -43px 0 0 0; */
-    }
     #image3 img { 
       width: 100%;
       height: 100%;
@@ -431,16 +485,16 @@ p{
     #text1 {
       text-align: center;
     }
-    .find-station-button {
-        margin-top: 325px;
-        /* margin-top: 400px; */
-        left: 18%;
+    
+    .find-station-container .find-station-button {
+        position: relative;
+        top: -5px;
+        left: 16%;
         transform: translateX(-50%);
-        padding: 7px 0px;
-        cursor: pointer;
-        z-index: 5;
-        width: 34%;
-        font-size: 14px;
+        /* padding: 20px 31px; */
+        padding: 15px 30px;
+        width: 44%;
+        font-size: 12px;
     }
 }
 
@@ -449,56 +503,6 @@ p{
         margin-top: 322px;
         left: 20%;
     }
-     /* .find-station-button {
-        margin-top: 280px; 
-        left: 20%; 
-        font-size: 12px; 
-        padding: 6px 0px; 
-    }
-
-    #tep-panel-heading {
-        font-size: 16px;
-        margin-top: 40px; 
-        margin-left: 40px; 
-        bottom: 10px; 
-    }
-
-    #button1 a button {
-        font-size: 11px; 
-        margin-right: 20px; 
-        padding: 12px; 
-        margin-top: 30px; 
-    }
-
-    #button {
-        margin-top: 0px; 
-        margin-left: -5px;
-    }
-
-    #button button {
-        padding: 8px 16px; 
-        font-size: 12px; 
-    }
-
-    p {
-        margin-top: -20px; 
-        margin-bottom: 5px; 
-        font-size: 10px; 
-        left: 140px; 
-    }
-
-    .marquee-container {
-        margin-top: -12px; 
-    }
-
-    #image3 {
-        margin: -70px 0 0 0; 
-    }
-
-    #button1 {
-        top: -50px; 
-        left: 60px; /
-    } */
 }
   @media (max-width: 388px){
     .find-station-button {
@@ -572,7 +576,29 @@ p{
         margin-right: 34px;
         padding: 16px;
         margin-top: 21px;
+    }
+
+    .find-station-container .find-station-button {
+    width: 36%;
+    /* position: relative; */
+    top: 0;
+    left: 20%;
+    transform: translateX(-50%);
+    /* padding: 20px 31px; */
+    padding: 5px 11px;
+    margin-top: 280px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 11px;
+    font-weight: bold;
+    margin-right: 12px;
 }
+
+
     p{
         margin-top: -29px;
         margin-bottom: 11px
@@ -580,7 +606,8 @@ p{
 
     #image3 img {
     /* margin-top: 0px; */
-    margin-bottom: 74px;
+    /* margin-bottom: 74px; */
+    margin: 48px 0 0 0;
     padding: 0;
     width: 100%;
     height: auto;
@@ -640,10 +667,10 @@ p{
                 <p>For the best experience and full functionality of this website, including viewing routes to your nearest polling station, please use <span style="color: #FF0000;">Google Chrome</span>.</p>
             </div>
         </div>
-
+    <div class="find-station-container">
     <button class="find-station-button" onclick="findNearestStation()">Find Your Nearest Polling Station</button>
     <p>Click here to Google Directions to your nearest Polling Station</p>
-
+    </div>      
     <div class="heading-button-container">
     <h3 id="tep-panel-heading">To view TEP Panel click on your respective Discipline</h3> <div id="button1">
     <a href="images1/TEP Manifesto-2024-27 (Flyer-A4)-03 (2)_page-0001.jpg" target="_blank">
@@ -885,6 +912,5 @@ p{
         </script>
     </div>
 
-</div>
 </body>
 </html>
