@@ -180,11 +180,16 @@ p{
 
 #image2 {
     width: 100%;
-    max-height: auto;
+    /* max-height: auto; */
+    aspect-ratio: 16/9;
     /* height: 200px; */
     display: block;
     margin: 0;
     margin-bottom: 30px;
+    /* height: 300px; Set a desired height for the container */
+    /* background-image: url('images1/WhatsApp Image 2024-08-02 at 16.21.05.jpeg'); 
+    background-size: cover;
+    background-position: center;*/
 }
 
 #tep-panel-heading, #button1 {
@@ -346,7 +351,7 @@ p{
         /* margin-top: 10px; */
         /* text-align: center; */
         font-size: 12px;
-        margin-top: 0px;
+        margin-top: -14px;
         font-weight: 500;
         width: 43%;
         /* text-align: center; */
@@ -380,6 +385,11 @@ p{
         width: 72%;
         margin-left: 57px;
 }
+    .heading-button-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 8px;
+    }
 
     #image3 {
         position: relative; 
@@ -402,7 +412,7 @@ p{
       text-align: center;
     }
     .find-station-button {
-        margin-top: 302px;
+        margin-top: 346px;
         /* margin-top: 400px; */
         left: 18%;
         transform: translateX(-50%);
@@ -445,7 +455,7 @@ p{
 
   @media (max-width: 375px){
     .find-station-button {
-        top: 35px;
+        top: 13px;
         font-size: 11px;
         left: 78px;
     }
@@ -493,16 +503,25 @@ p{
     margin-top: 130px;
     margin-bottom: 25px;
     padding: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     }
 
-    #image2 img, #image3 img {
+    #image2 img{
         width: 100%;
-        height: auto;
+        height: 92%;
         object-fit: cover;  /* or object-fit: contain, depending on your preference */
     }
+    .marquee{
+        margin-top: -6px;
+    }
+    .marquee-container {
+        margin-top: -8px;
+    }    
 
     #image3 {
-        margin: -11px 0 0 0; 
+        margin: -88px 0 0 0; 
     }
 
     #image3 img { 
