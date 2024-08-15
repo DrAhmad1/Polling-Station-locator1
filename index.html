@@ -99,8 +99,14 @@ button:hover {
     background-color: rgb(231, 36, 36) !important; 
     color: white !important;
     border-radius: 5px !important;
-    /* Any other styles you specifically want for this button */ 
 }
+
+#button1 a button:hover {
+    background-color: #c82333 !important; 
+    transform: scale(1.05); 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); 
+}
+
 
 
 .find-station-container p {
@@ -153,25 +159,13 @@ p {
 }
 
 #button button {
-    /* ... other styles ... */
-    width: auto; /* Allow buttons to adjust width based on content */
-    flex: 1 0 45%; /* Allow buttons to grow and shrink */
-    min-width: 150px; /* Adjust as needed */
-    max-width: 300px; /* Adjust as needed */
+    width: auto; 
+    flex: 1 0 45%; 
+    min-width: 150px; 
+    max-width: 300px; 
 }
 
 #button1 {
-    /* position: relative; */
-    /* display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    cursor: pointer; */
-    /* left: 300px; */
-    /* gap: 10px; */
-    /* padding: 0 2px;
-    width: 144%; */
-    /* margin-top: 0px; */
-    /* top: -68px; */
     margin-left: 20px; /* Add some space between the heading and button */
     border-radius: 5px;
 
@@ -183,7 +177,6 @@ p {
     top: 0;
     left: -30%;
     transform: translateX(-50%);
-    /* padding: 20px 31px; */
     padding: 15px 30px;
     margin-top: 11px;
     background-color: #007bff;
@@ -198,8 +191,8 @@ p {
 }
 
 .find-station-button {
-    width: auto; /* Let the button size itself based on content */
-    display: inline-block; /* Allow the button to be centered */
+    width: auto; 
+    display: inline-block; 
 }
 
 .find-station-button:hover {
@@ -211,25 +204,19 @@ p {
 #image2 {
     width: 100%;
     max-height: auto;
-    /* aspect-ratio: 16/9; */
-    /* height: 200px; */
     display: block;
     margin: 0;
     margin-bottom: 30px;
-    /* height: 300px; Set a desired height for the container */
-    /* background-image: url('images1/WhatsApp Image 2024-08-02 at 16.21.05.jpeg'); 
-    background-size: cover;
-    background-position: center;*/
 }
 
 #tep-panel-heading, #button1 {
-    display: inline-flex; /* or just 'flex' if you want them to take full width */
-     /* align-items: center;   */
+    display: inline-flex; 
+
 }
 
 .heading-button-container {
     display: flex;
-    justify-content: space-around; /* or 'center' if you want them centered */
+    justify-content: space-around; 
 }
 
  #image2 img {
@@ -251,7 +238,6 @@ p {
 
 .marquee {
     display: inline-block;
-    /* padding-left: 100%;  */
     animation: marquee 20s linear infinite;
 }
 
@@ -263,27 +249,20 @@ p {
 
 #image3 {
     position: relative; 
-    /* width: 100vw;  */
     height: auto;
-    /* max-height: 50vh; */
-    /* height: (100vh - [height of other elements]); */
     display: block;
-    /* margin: 0;  */
-    /* margin: -2px 0 0 0; */
     padding: 0;
-    flex-grow: 1;  /* Allow image3 to grow and take up remaining space */
+    flex-grow: 1;  
     margin: 20px 0 0 0;
-    width: 100%; /* Ensure the container takes full width */
+    width: 100%; 
 }
 #image3 img{
     width: 100%;
     height: 100%;
     object-fit: cover; 
     margin: 48px 0 0 0;
-    /* margin-top: 130px; Adjusted margin-top */
     margin-bottom: 74px; 
-  /* margin: 0; Reset margin on the image */
-    padding: 0; /* Reset padding on the image */
+    padding: 0; 
     top: 60px;
 }
 
@@ -301,12 +280,6 @@ p {
     }
 }
 @media (max-width: 853px) {
-    /* .find-station-button {
-        padding: 22px 22px;
-        font-size: 14px;
-        top: 16px;
-        left: 94px;
-    } */
     .find-station-container p {
         margin-right: -17%;
         margin-top: -48px;
@@ -370,35 +343,19 @@ p {
         top: -5px;
         left: -6%;
         transform: translateX(-50%);
-        /* padding: 20px 31px; */
         padding: 15px 30px;
 }
 
     .find-station-container p {
         margin-top: -7%; 
     }
-    .marquee p { /* Target the p tag within the marquee */
-        font-size: 14px; /* Adjust as needed for smaller screens */
+    .marquee p { 
+        font-size: 14px; 
     }
 }
-    /* #tep-panel-heading {
-        font-size: 20px; 
-  }
-    p {
-        font-size: 20px; 
-        left: 0; 
-        margin-top: 15px;
-        word-break: break-word;
-    }
 
-} */
 
   @media (max-width: 548px) {
-    /* .find-station-container p {
-        margin-top: -14%;
-        width: 53%;
-        margin-left: 27%;
-    } */
     
     .find-station-button{
         top: 13px;
@@ -466,8 +423,7 @@ p {
         display: flex;
         justify-content: center; 
         flex-wrap: wrap;
-        margin-top: 16px; /* Adjust as needed */
-        /* margin-right: 58px; */
+        margin-top: 16px; 
         top: 53px;
         margin-left: -20px;
     }
@@ -516,11 +472,10 @@ p {
     .find-station-container .find-station-button {
         position: relative;
         top: -5px;
-        left: 18%;
+        left: 16%;
         transform: translateX(-50%);
-        /* padding: 20px 31px; */
         padding: 15px 30px;
-        width: 44%;
+        width: 40%;
         font-size: 12px;
     }
 }
@@ -544,11 +499,8 @@ p {
   }
 
   #button {
-        /* display: flex;
-        justify-content: center; */
         flex-wrap: wrap;
         margin-top: 3px;
-        /* margin-right: 58px; */
         top: 50px;
         margin-left: -11px;
     }
@@ -572,10 +524,10 @@ p {
 
   @media (max-width: 375px){
     .find-station-container .find-station-button {
-        top: -5px;
+        top: -9px;
         left: 14%;
         width: 39%;
-        font-size: 11px;
+        font-size: 10px;
     }
   }
   @media (max-width: 360px){
@@ -587,22 +539,12 @@ p {
         margin-left: 56px;
         bottom: 13px;
     }
-    /* #button1 a button {
-        background-color: rgb(231, 36, 36) !important;
-        color: white !important;
-        border-radius: 5px !important;
-        font-size: 10px;
-        margin-right: 34px;
-        padding: 9px;
-        margin-top: 41px;
-    } */
 
     #button {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         margin-top: 1%;
-        /* margin-right: 58px; */
         top: 53px;
         margin-left: -10px;
         margin-bottom: 26%;
@@ -635,9 +577,8 @@ p {
 
     .find-station-container .find-station-button {
         width: 49%;
-        /* position: relative; */
         top: -8px;
-        left: 22%;
+        left: 24%;
         transform: translateX(-50%);
         /* padding: 20px 31px; */
         margin-top: 12px;
@@ -662,8 +603,6 @@ p {
     }
 
     #image3 img {
-    /* margin-top: 0px; */
-    /* margin-bottom: 74px; */
     margin: 48px 0 0 0;
     padding: 0;
     width: 100%;
@@ -672,13 +611,13 @@ p {
     }
 
     .heading-button-container {
-        margin-top: -8px; /* Add some top margin for separation */
+        margin-top: -8px; 
     }
 
     #image2 img{
         width: 100%;
         height: 92%;
-        object-fit: cover;  /* or object-fit: contain, depending on your preference */
+        object-fit: cover;  
         margin-bottom: 0px;
     }
 
